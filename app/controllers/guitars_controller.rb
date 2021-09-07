@@ -6,7 +6,8 @@ class GuitarsController < ApplicationController
   end
 
   def create
-    guitar = Guitar.new(guitar_params)
+    guitar = Guitar.create(guitar_params)
+    render json: guitar
   end
 
   def show
@@ -20,8 +21,8 @@ class GuitarsController < ApplicationController
 
   private
 
-  def guitar_parms
-    params.require(:guitar).permit(:brand, :model, :price)
+  def guitar_params
+    params.require(:guitar).permit(:brand, :model, :price, :image_url)
   end
   
 
