@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_08_011323) do
+ActiveRecord::Schema.define(version: 2021_09_08_131249) do
 
   create_table "guitars", force: :cascade do |t|
     t.string "brand"
@@ -22,4 +22,22 @@ ActiveRecord::Schema.define(version: 2021_09_08_011323) do
     t.string "style"
   end
 
+  create_table "shopping_carts", force: :cascade do |t|
+    t.string "item"
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_shopping_carts_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "email"
+    t.string "password_digest"
+    t.string "password_confirmation"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  add_foreign_key "shopping_carts", "users"
 end
