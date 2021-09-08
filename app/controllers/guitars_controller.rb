@@ -22,7 +22,7 @@ class GuitarsController < ApplicationController
   private
 
   def guitar_params
-    params.require(:guitar).permit(:brand, :model, :price, :image_url)
+    params.require(:guitar).permit(:type, :brand, :model, :price, :image_url)
   end
   
 
