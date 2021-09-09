@@ -1,3 +1,3 @@
 class GuitarSerializer < ActiveModel::Serializer
-  attributes :id, :style, :brand, :model, :price, :image_url
+  attributes :id, :style, :brand, :model, :image_url
 end
