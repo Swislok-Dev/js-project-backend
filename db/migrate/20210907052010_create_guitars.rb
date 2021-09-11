@@ -3,7 +3,6 @@ class CreateGuitars < ActiveRecord::Migration[6.1]
     create_table :guitars do |t|
       t.string :brand
       t.string :model
-      t.float :price
 
       t.timestamps
     end
