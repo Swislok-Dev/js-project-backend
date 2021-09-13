@@ -2,7 +2,11 @@ class GuitarsController < ApplicationController
 
   def index
     guitars = Guitar.all
-    render json: guitars
+    if guitars
+      render json: guitars
+    else
+      render json: { message: "No guitars found" }
+    end
   end
 
   def create
