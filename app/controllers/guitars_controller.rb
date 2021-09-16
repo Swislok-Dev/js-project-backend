@@ -23,6 +23,12 @@ class GuitarsController < ApplicationController
     end
   end
 
+  def destroy
+    guitar = Guitar.find_by(id: params[:id])
+    guitar.destroy
+    render json: {message: "Guitar has been deleted"}
+  end
+
   private
 
   def guitar_params
