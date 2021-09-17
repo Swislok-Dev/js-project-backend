@@ -1,5 +1,7 @@
 class GuitarsController < ApplicationController
 
+  before_action :get_guitar, only: [:destroy]
+
   def index
     guitars = Guitar.all
     if guitars
@@ -24,12 +26,15 @@ class GuitarsController < ApplicationController
   end
 
   def destroy
-    guitar = Guitar.find_by(id: params[:id])
-    guitar.destroy
+    @guitar.destroy
     render json: {message: "Guitar has been deleted"}
   end
 
   private
+
+  def get_guitar
+    @guitar = Guitar.find_by(id: params[:id])
+  end
 
   def guitar_params
     params.require(:guitar).permit(:style, :brand, :model, :image_url, :user_id)
