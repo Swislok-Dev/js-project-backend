@@ -1,25 +1,12 @@
-# README
+# Guitar Picks backend
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a Ruby on Rails backend server using Ruby 2.6.1
 
-Things you may want to cover:
+## To get started
 
-* Ruby version
+Run `bundle install` to get requied gems installed
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# js-project-backend
+Create the rails database run `rails db:create`
+Run migrations with `rails db:migrate`
+Create seeds to get `rails db:seed`
+To start server `rails server`
