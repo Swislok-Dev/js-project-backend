@@ -4,7 +4,7 @@ class GuitarsController < ApplicationController
 
   def index
     guitars = Guitar.all
-    if guitars
+    if guitars.present?
       render json: guitars
     else
       render json: { message: "No guitars found" }
