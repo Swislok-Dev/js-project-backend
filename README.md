@@ -1,3 +1,5 @@
+Link to frontend [here](https://github.com/Swislok-Dev/js-project-frontend)
+
 # Guitar Picks backend
 
 This is a Ruby on Rails backend server using Ruby 2.6.1
